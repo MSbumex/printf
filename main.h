@@ -12,23 +12,25 @@
  *
  * @fs: The specifier format
  * @fp: The func pointer.
- * @fc: the func pointer typedef 
  */
-struct fs
+typedef struct fs
 {
 	char fs;
-	int (*fp)(va_list, char[], int, int, int, int);
-};
-
-typedef struct fs fc;
+	int (*fp)(va_list, char[]);
+}
 
 int _printf(const char *format, ...);
-int _handle (const char *fs, int *i, va_list list, char buffer[]);
 
-/** 
- * Print function for char string, number and hexa
- * @t- type
- * @b[] - buffer
+int _handle(const char *fs, int *p_ind, va_list list, char b[], int wid);
+
+/**
+ * p_char - function for char
+ * p_string: func to print string,
+ * p_int : func to print number and
+ * p_hexa : func to print hexaddecimal
+ * @t: print type list
+ * @b: - buffer list
+ * Return: return func value
  */
 
 int p_char(va_list t, char b[]);
@@ -40,14 +42,16 @@ int p_octal(va_list t, char b[]);
 int p_hexadec(va_list t, char b[]);
 int p_upperhexa(va_list t, char b[]);
 int p_hex(va_list t, char m[], char b[]);
-
+int p_percent(va_list types, char b[]);
 
 int un_print(va_list t, char b[]);
 
 /**
- * other function
+ * other func - function to print or return
+ * @b: return b list
+ * @t: return types list
+ * Return: return value of func
  */
-
 int _pointer(va_list t, char b[]);
 int _width(const char *format, int *i, va_list list);
 int _precision(const char *format, int *i, va_list list);
