@@ -56,7 +56,7 @@ int _pointer(va_list t, char b[]);
 int _width(const char *format, int *i, va_list list);
 int _precision(const char *format, int *i, va_list list);
 int _size(const char *format, int *i);
-int _flags(const char *format, int *i);
+int _flags(const char *format, int *index);
 
 int p_reverse(va_list t, char b[]);
 int print_rot13string(va_list t, char b[]);
