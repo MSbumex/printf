@@ -10,62 +10,27 @@
 /**
  * struct fs - Struct fs
  *
- * @fs: The specifier format
+ * @fs: The format conversion pointer
  * @fp: The func pointer.
  */
 typedef struct fs
 {
-	char fs;
-	int (*fp)(va_list, char[]);
-}
+	char *fs;
 
-int _printf(const char *format, ...);
+	int (*fp)(va_list args);
+} fs_t;
 
-int _handle(const char *fs, int *p_ind, va_list list, char b[], int wid);
-
-/**
- * p_char - function for char
- * p_string: func to print string,
- * p_int : func to print number and
- * p_hexa : func to print hexaddecimal
- * @t: print type list
- * @b: - buffer list
- * Return: return func value
- */
-
-int p_char(va_list t, char b[]);
-int p_string(va_list t, char b[]);
-int p_int(va_list t, char b[]);
-int p_binary(va_list t, char b[]);
-int p_unsigned(va_list t, char b[]);
-int p_octal(va_list t, char b[]);
-int p_hexadec(va_list t, char b[]);
-int p_upperhexa(va_list t, char b[]);
-int p_hex(va_list t, char m[], char b[]);
-int p_percent(va_list types, char b[]);
-
-int un_print(va_list t, char b[]);
-
-/**
- * other func - function to print or return
- * @b: return b list
- * @t: return types list
- * Return: return value of func
- */
-int _pointer(va_list t, char b[]);
-int _width(const char *format, int *i, va_list list);
-int _precision(const char *format, int *i, va_list list);
-int _size(const char *format, int *i);
-int _flags(const char *format, int *index);
-
-int p_reverse(va_list t, char b[]);
-int print_rot13string(va_list t, char b[]);
-
-
-int write_char(char c, char b[]);
-int size_num(long int num, int size)
-int is_print(char);
-int append_hexa(char, char[], int);
-int is_dig(char);
+int format_write(char c);
+int format_print(const char *format, ...);
+int print_char(va_list args);
+int print_str(va_list args);
+int format_print2(const char *format, va_list args);
+int specif(char format, va_list args);
+int invalid_spec(char prev_format, char format, int count);
+int print_int(va_list args);
+void print_recursint(int a);
+int print_binary(va_list args);
+void print_recursbinary(int a);
+int char_validate(char _type);
 
 #endif /* MAIN_H */
