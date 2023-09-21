@@ -25,7 +25,7 @@ int format_print(const char *format, ...);
 int print_char(va_list args);
 int print_str(va_list args);
 int format_print2(const char *format, va_list args);
-int specif(char format, va_list args);
+int specifier(char format, va_list args);
 int invalid_spec(char prev_format, char format, int count);
 int print_int(va_list args);
 void print_recursint(int a);
