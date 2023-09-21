@@ -63,7 +63,7 @@ int print_rot13string(va_list t, char b[]);
 
 
 int write_char(char c, char b[]);
-
+int size_num(long int num, int size)
 int is_print(char);
 int append_hexa(char, char[], int);
 int is_dig(char);
