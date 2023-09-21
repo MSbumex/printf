@@ -3,10 +3,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-#define BUFF_SIZE 1024
-#define _HASH 8
-#define _SPACE 16
-
 /**
  * struct fs - Struct fs
  *

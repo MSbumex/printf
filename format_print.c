@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 /**
- * format_print - function for print format
+ * _printf - function for print format
  * @format: string argument
  *
  * Return: return value  number of chars
  */
-int format_print(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int length = 0;
@@ -18,7 +18,7 @@ int format_print(const char *format, ...)
 
 	va_start(args, format);
 
-	length = format_print(format, args);
+	length = _printf(format, args);
 	va_end(args);
 	return (length);
 }

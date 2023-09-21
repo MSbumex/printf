@@ -61,7 +61,7 @@ int print_int(va_list args)
 	m = n;
 	if (m < 0)
 	{
-		print_write('-');
+		format_write('-');
 		m = m * -1;
 		n = m;
 		count += 1;
